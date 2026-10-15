@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8f7f2" />
+  <meta name="description" content="A live radar for hackathons, workshops, open calls and things worth showing up for." />
+  <title>SIDEQUEST — your next good thing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="rail">
+      <a class="brand" href="#" aria-label="Sidequest home"><span class="brand-mark">✳</span><span>sidequest<span class="brand-dot">.</span></span></a>
+      <div class="rail-label">YOUR SPACE</div>
+      <button class="rail-link active"><span class="rail-icon">⌂</span> Discover</button>
+      <button class="rail-link" id="savedNav"><span class="rail-icon">♡</span> Saved <span class="saved-count" id="savedCount">0</span></button>
+      <button class="rail-link" id="calendarNav"><span class="rail-icon">▦</span> My week</button>
+      <div class="rail-divider"></div>
+      <div class="rail-label">YOUR INTERESTS</div>
+      <button class="interest-item"><i class="interest-dot coral"></i> Build & code</button>
+      <button class="interest-item"><i class="interest-dot yellow"></i> Make & design</button>
+      <button class="interest-item"><i class="interest-dot blue"></i> Meet people</button>
+      <div class="rail-bottom"><div class="avatar">A</div><div><b>Aditya</b><small>Your next chapter</small></div><button class="more-btn" aria-label="More">···</button></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><div class="crumb"><span>YOUR SPACE</span><span class="crumb-slash">/</span><b>Discover</b></div><div class="top-actions"><span class="live-status"><i></i> LIVE RADAR</span><button class="icon-button" aria-label="Notifications">♧<span class="notification-dot"></span></button></div></header>
+      <div class="page-content">
+        <section class="hero">
+          <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> A LITTLE MORE OUT THERE</div><h1>Your next good<br/>thing is <em>out there.</em></h1><p>Hackathons, workshops, open calls & curious little detours.<br class="desktop-only"/> We find the ones worth showing up for.</p></div>
+          <div class="hero-art" aria-hidden="true"><div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="orbit orbit-3"></div><span class="art-star s1">✳</span><span class="art-star s2">✦</span><span class="art-star s3">·</span><span class="art-planet">✳</span><div class="art-caption">THE WORLD IS<br/>A LITTLE BIGGER<br/>THAN YOUR FEED.</div></div>
+          <div class="hero-stamp"><span>MADE FOR THE</span><b>what if?</b><span>IN YOU <i>✳</i></span></div>
+        </section>
+        <section class="search-panel"><div class="search-head"><div><span class="section-kicker">TUNE YOUR RADAR</span><h2>What sounds like you?</h2></div><button class="text-button" id="resetBtn">Reset filters <span>↗</span></button></div>
+          <form id="searchForm" class="filters"><label class="filter-field query-field"><span class="field-icon">⌕</span><input id="query" type="text" value="creative coding, design, climate" placeholder="Try ‘creative coding’ or ‘climate’" aria-label="Interests and keywords"/><span class="key-hint">↵</span></label><label class="filter-field location-field"><span class="field-icon pin">⌖</span><input id="location" type="text" value="Delhi, India" placeholder="City or anywhere" aria-label="Location"/><span class="field-caret">⌄</span></label><button type="submit" class="search-button"><span class="button-spark">✳</span> Find my next thing <span class="button-arrow">↗</span></button></form>
+          <div class="chips-row"><span class="chips-label">I'M INTO</span><button class="chip selected" data-category="Hackathons"># hackathons</button><button class="chip selected" data-category="Workshops"># workshops</button><button class="chip selected" data-category="Open calls"># open calls</button><button class="chip selected" data-category="Community"># community</button><span class="chips-sep"></span><button class="date-filter" id="dateBtn">◷ &nbsp;Next 30 days <span>⌄</span></button></div>
+        </section>
+        <section class="results-section"><div class="results-toolbar"><div><div class="results-title-row"><h2>Your radar, right now</h2><span class="results-count" id="resultCount">06</span></div><p id="resultsSub">Fresh finds around Delhi, India · updated just now</p></div><div class="sort-wrap"><span>SORT BY</span><button id="sortBtn">Best match <i>⌄</i></button></div></div>
+          <div class="result-layout"><div class="cards-column" id="cards"></div><aside class="side-column"><div class="week-card"><div class="side-card-top"><div><span class="section-kicker">AHEAD OF YOU</span><h3>Make room<br/>for <em>something.</em></h3></div><span class="week-icon">↗</span></div><div class="week-date"><span class="week-day">THIS WEEK</span><span class="week-rule"></span><span class="week-spark">✳</span></div><div class="week-event"><div class="week-date-tile"><b>18</b><span>OCT</span></div><div><b>Designing for<br/>the last mile</b><small>Online · 6:30 PM</small></div><span class="week-arrow">↗</span></div><div class="week-event"><div class="week-date-tile yellow-tile"><b>21</b><span>OCT</span></div><div><b>Campus Build<br/>Night · #04</b><small>Delhi · 5:00 PM</small></div><span class="week-arrow">↗</span></div><button class="week-link" id="weekLink">Open my week <span>↗</span></button></div><div class="note-card"><span class="note-stamp">✳ A NOTE FROM US</span><p>Good things happen when you say yes to one <em>unexpected</em> thing.</p><span class="note-sign">— sidequest, probably</span><span class="note-doodle">↗</span></div><div class="tinyfish-credit"><span class="fish-mark">◉</span><div><b>Powered by TinyFish</b><small>Live web. Fresh discoveries.</small></div><span class="credit-status"><i></i> ON</span></div></aside></div>
+        </section>
+        <footer><span>GO OUT THERE. COME BACK WITH A STORY.</span><span>✳ &nbsp;SIDEQUEST © 2026</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="modal"><div class="modal"><button class="modal-close" id="modalClose">×</button><div class="section-kicker">YOUR WEEK, MORE INTERESTING</div><h2>Save the dates<br/><em>that feel like you.</em></h2><p id="modalCopy">Your saved events will show up here as you explore.</p><div id="savedList"></div></div></div>
+  <script src="/app.js"></script>
+</body>
+</html>
